@@ -1,0 +1,9 @@
+
+
+- name: spark master
+  hosts: spark-master
+
+  roles:
+    #- { role: "/Users/benblamey/projects/haste/spark-cluster-install/roles/common" }
+    - spark
+

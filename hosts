@@ -1,0 +1,11 @@
+spark-prod
+
+
+[all:vars]
+# Needed for Ubuntu hosts
+ansible_python_interpreter=/usr/bin/python3
+
+[spark-master]
+spark-prod
+
+[spark-nodes]
