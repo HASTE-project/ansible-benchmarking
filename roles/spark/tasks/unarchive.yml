@@ -1,0 +1,32 @@
+- name: Create Ansible Dir
+  become: true
+  file:
+    path: /usr/local/spark-2.2.1-bin-hadoop2.7
+    state: directory
+
+- name: Download and Unzip Apache Spark
+  become: true
+  unarchive:
+    # For Hadoop 2.7
+    src: http://apache.mirrors.spacedump.net/spark/spark-2.2.1/spark-2.2.1-bin-hadoop2.7.tgz
+    dest: /usr/local/spark-2.2.1-bin-hadoop2.7
+    # Don't download it again
+    creates: /usr/local/spark-2.2.1-bin-hadoop2.7
+    remote_src: yes
+
+- name: Symlink to Spark
+  become: true
+  file:
+    src: /usr/local/spark-2.2.1-bin-hadoop2.7
+    dest: /usr/local/spark
+    state: link
+
+- name: set SPARK_HOME
+  lineinfile:
+    path: ~/.profile
+    line: "export SPARK_HOME=\"/usr/local/spark\""
+
+- name: add Spark to $PATH
+  lineinfile:
+    path: ~/.profile
+    line: "export PATH=\"$PATH:$SPARK_HOME\""
