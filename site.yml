@@ -1,2 +1,6 @@
 #- import_playbook: harmonicio.yml
 - import_playbook: spark.yml
+
+- hosts: all
+  roles:
+    - haste-common

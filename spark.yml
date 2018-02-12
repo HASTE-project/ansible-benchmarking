@@ -6,4 +6,4 @@
   roles:
     #- { role: "/Users/benblamey/projects/haste/spark-cluster-install/roles/common" }
     - spark
-
+    - pyspark-notebook-server

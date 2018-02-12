@@ -1,1 +1,2 @@
-# TODO: import playbooks from HW's code
+
+- import_tasks: hostnames.yml

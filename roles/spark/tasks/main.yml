@@ -1,6 +1,7 @@
 
 - import_tasks: java.yml
 
+# Installs to: /usr/local/spark
 - import_tasks: unarchive.yml
 
 # TODO: template file
