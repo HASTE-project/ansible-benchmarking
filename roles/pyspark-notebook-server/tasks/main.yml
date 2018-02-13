@@ -29,6 +29,7 @@
     path: "~/.jupyter"
     state: directory
 
+# TODO: This should be git-crypted - at the moment the server only listens on localhostgs
 - name: Config file
   copy:
     content: |
