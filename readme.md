@@ -15,7 +15,7 @@ To restart the Spark master and slaves:
 (factored out to allow easy restarting for benchmarking tests)
 
 ```
-ansible-playbook util/restart-spark-cluster.yml
+ansible-playbook playbooks-util/restart-spark-cluster.yml
 ```
 
 

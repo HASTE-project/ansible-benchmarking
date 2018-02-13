@@ -38,10 +38,11 @@
 #    --properties-file FILE   Path to a custom Spark properties file.
 #                             Default is conf/spark-defaults.conf.
 
- # TODO: get hostname from hosts?
+
+ # TODO: get hostname from a variable
   - name: "Start slave"
     vars:
-      spark_master_host: "spark://spark-prod"
+      spark_master_host: "spark://spark-prod:7077"
     command: "./sbin/start-slave.sh {{spark_master_host}}"
     args:
             chdir: /usr/local/spark/

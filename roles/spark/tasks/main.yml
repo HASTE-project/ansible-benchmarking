@@ -16,4 +16,4 @@
   with_items:
     - "{{ groups['spark-master'] }}"
 
-# see util/restart-spark-cluster.yml for the playbook to actually start the cluster.
+# see playbooks-util/restart-spark-cluster.yml for the playbook to actually start the cluster.
