@@ -40,6 +40,7 @@
             }
     dest: ~/.jupyter/jupyter_notebook_config.json
 
+# TODO add argument for no-browser
 - cron:
     name: "run jupyter on startup"
     special_time: reboot
