@@ -2,8 +2,14 @@
 
 - name: spark master
   hosts: spark-master
-
   roles:
     #- { role: "/Users/benblamey/projects/haste/spark-cluster-install/roles/common" }
     - spark
     - pyspark-notebook-server
+
+
+- name: spark worker
+  hosts: spark-worker
+  roles:
+    #- { role: "/Users/benblamey/projects/haste/spark-cluster-install/roles/common" }
+    - spark
