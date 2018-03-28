@@ -1,2 +1,20 @@
 
 - import_tasks: hostnames.yml
+
+- name: Update apt
+  become: true
+  apt:
+    update_cache: yes
+    cache_valid_time: 604800 # one week
+
+
+- name: install iperf
+  become: true
+  apt:
+    name: iperf
+
+# TODO: template the entire authorized_keys here - blow away anything else
+# TODO: make this the single POT for SSH keys (scrap google doc)
+- lineinfile:
+    path: ~/.ssh/authorized_keys
+    line: 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDRQU7P8lTCHHj5LZaw0KoRcoL5u/cQNTcZG4u8LCAVQ8tuUIJkCIRtsebKbZjtkzLyrBjNQJBAg4I0ulZ0Wl03ixHAHr7XgFtjymn9m0dmUDW6woovmHyzpUAi4qqRGNvlELRrOgaXewJZ04UWXgYiNbWhUEc2hxMgJoVS4vQ4nHhuGFhcmR/7219bKQs2HRBQJXhBP4QI62VXLfr9h/vsxcIX7ssmGpZEELQdFX6TRnEJg/AlqJLmo8Eh5pfRO0JgdLgFRdGhR8CcPJGN4d55NMJnIe5eqSdq/PCAmPwxpk2LbUwwnvswrCY3jrwNfrxl0rlzN3bAUOWJ3kQyf3+7Eq67P08wzIlcgcUH3iSK+KfYMcz5L9IkDv91ITqcpKwWLb8RV3VPg2R7UK3fKiXpwc7OT5R9gsHnoZAU+vTEo6plnSBuJ6V0Vq9oS+HgZIaFyPGgpaAXFWKBQze3d1sHcA1OFCkIvVruXp9o4/nOFwB3Zefm68FbmuMlLEsBcGXyKukSArRG9RfB1D+mVNT5BeBOFAqc/9Gx3TkRHOrq8jb3SYRV1FoifgWRYq6NBxOOsmDScGk7eR19b6ZwhmSgNTIdX+SqJVv4Ji2IDYe6zx5mZbkE62tIN14vm1fy1zS726oIsv+PdJf6W40fRIwg65yOHmxiG1RdgTA0dyPmLw== sudarsan.bhargavan.6381@student.uu.se'

@@ -29,7 +29,7 @@
     path: "~/.jupyter"
     state: directory
 
-# TODO: This should be git-crypted - at the moment the server only listens on localhostgs
+# TODO: This should be git-crypted - at the moment the server only listens on localhost
 - name: Config file
   copy:
     content: |
@@ -40,10 +40,11 @@
             }
     dest: ~/.jupyter/jupyter_notebook_config.json
 
+# TODO: quoting broken here?
 # TODO add argument for no-browser
-- cron:
-    name: "run jupyter on startup"
-    special_time: reboot
-    job: "/usr/bin/screen -dmS jupyter sh -c \"/home/ubuntu/.local/bin/jupyter notebook --notebook-dir='/home/ubuntu/jupyter'; exec bash\""
+#- cron:
+#    name: "run jupyter on startup"
+#    special_time: reboot
+#      job: "/usr/bin/screen -dmS jupyter sh -c \"/home/ubuntu/.local/bin/jupyter notebook --notebook-dir='/home/ubuntu/jupyter'; exec bash\""
 
 # Note: need to reboot after running this to get the server to start.

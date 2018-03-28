@@ -2,12 +2,12 @@ Ansible Playbooks for Automated Deployment of the HASTE Pipeline
 
 Tested with Ubuntu LTS 16.04
 
-Ensure that SSH configration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more details.
+Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more details.
 
 To deploy entire pipeline (dry run):
 
 ```
-ansible-playbook site.yml --check
+ansible-playbook -i hosts site.yml --check
 ```
 
 
