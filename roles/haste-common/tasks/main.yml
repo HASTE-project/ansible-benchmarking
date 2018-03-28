@@ -13,6 +13,7 @@
   apt:
     name: iperf
 
+# TODO: factor out file
 # TODO: template the entire authorized_keys here - blow away anything else
 # TODO: make this the single POT for SSH keys (scrap google doc)
 - lineinfile:
