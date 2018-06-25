@@ -8,7 +8,22 @@
     args:
             chdir: /usr/local/spark/
     become: yes # needed to write log files?
-    
+
+  - name: "Kill outstanding Spark processes"
+    shell: |
+      kill -s KILL $(lsof -t -i :4040 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4041 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4042 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4043 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4044 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4045 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4046 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4047 -sTCP:LISTEN)
+      kill -s KILL $(lsof -t -i :4048 -sTCP:LISTEN)
+      exit 0
+    args:
+      executable: /bin/bash
+
   - name: "Start Master"
     command: ./sbin/start-master.sh
     args:
@@ -42,7 +57,7 @@
  # TODO: get hostname from a variable
   - name: "Start slave"
     vars:
-      spark_master_host: "spark://spark-prod:7077"
+      spark_master_host: "spark://ben-spark-master:7077"
     command: "./sbin/start-slave.sh {{spark_master_host}}"
     args:
             chdir: /usr/local/spark/

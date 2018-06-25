@@ -7,10 +7,15 @@ Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config
 To deploy entire pipeline (dry run):
 
 ```
-ansible-playbook -i hosts site.yml --check
+ansible-playbook -i hosts_ben_uppmax site.yml --check
 ```
 
+ansible-playbook -i hosts_ben_uppmax site.yml
 
+
+```
+ansible -i hosts_ben_uppmax all -a "echo hi!"
+```
 
 To restart the Spark master and slaves:
 (factored out to allow easy restarting for benchmarking tests)
@@ -18,8 +23,8 @@ To restart the Spark master and slaves:
 GOTCHA: check the Spark master host name - its hard coded!!!
 
 
-```
+
 ansible-playbook -i hosts_ben_uppmax playbooks-util/restart-spark-cluster.yml
-```
+
 
 Contributors: Ben Blamey

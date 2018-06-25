@@ -2,14 +2,22 @@
 
 # Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more setup info.
 
-ben-stream-src
+#ben-stream-src
+#ben-stream-src-2
+ben-stream-src-3
+#ben-stream-src-4
+ben-stream-src-5
+
 ben-spark-master
+
 ben-spark-worker-5
 ben-spark-worker-4
 ben-spark-worker-3
 ben-spark-worker-2
 ben-spark-worker-1
+
 ben-bastion
+
 
 [all:vars]
 # Needed for Ubuntu hosts
@@ -24,3 +32,4 @@ ben-spark-worker-2
 ben-spark-worker-3
 ben-spark-worker-4
 ben-spark-worker-5
+
