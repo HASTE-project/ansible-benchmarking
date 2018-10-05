@@ -1,0 +1,34 @@
+# Note: the version of zookeeper in the ubuntu package seems to be years out of date.
+
+- name: Download and Unzip Zookeeper
+  become: true
+  unarchive:
+    src: http://apache.mirrors.spacedump.net/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz
+    dest: /usr/local/
+    # Don't download it again
+    creates: /usr/local/zookeeper-3.4.13
+    remote_src: yes
+
+- name: Symlink to Zookeeper
+  become: true
+  file:
+    src: /usr/local/zookeeper-3.4.13
+    dest: /usr/local/zookeeper
+    state: link
+
+
+- name: zookeeper data dir
+  become: true
+  file: path=/data/zookeeper state=directory
+
+- name: zookeeper config
+  become: true
+  template:
+    src: zoo.cfg.j2
+    dest: /usr/local/zookeeper/conf/zoo.cfg
+    owner: root
+    group: root
+
+- name: start zookeeper
+  become: true
+  shell: /usr/local/zookeeper/bin/zkServer.sh restart

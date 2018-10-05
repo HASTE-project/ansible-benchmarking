@@ -1,0 +1,21 @@
+
+
+- name: Download and Unzip Kafka
+  become: true
+  unarchive:
+    src: http://apache.mirrors.spacedump.net/kafka/2.0.0/kafka_2.11-2.0.0.tgz
+    dest: /usr/local/
+    # Don't download it again
+    creates: /usr/local/kafka_2.11-2.0.0
+    remote_src: yes
+
+- name: Symlink to Kafka
+  become: true
+  file:
+    src: /usr/local/kafka_2.11-2.0.0
+    dest: /usr/local/kafka
+    state: link
+
+- name: Start kafka
+  become: true
+  shell: /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties

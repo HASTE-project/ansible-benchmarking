@@ -4,12 +4,13 @@
 
 ben-stream-src
 ben-spark-master
-ben-spark-worker-5
+#ben-spark-worker-5
 ben-spark-worker-4
 ben-spark-worker-3
 ben-spark-worker-2
 ben-spark-worker-1
 ben-bastion
+ben-kafka-server
 
 [all:vars]
 # Needed for Ubuntu hosts
@@ -23,4 +24,4 @@ ben-spark-worker-1
 ben-spark-worker-2
 ben-spark-worker-3
 ben-spark-worker-4
-ben-spark-worker-5
+#ben-spark-worker-5

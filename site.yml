@@ -1,6 +1,15 @@
 #- import_playbook: harmonicio.yml
-- import_playbook: spark.yml
+
+- hosts: ben-bastion
+  roles:
+    - bastion
 
 - hosts: all
   roles:
     - haste-common
+
+- import_playbook: spark.yml
+
+- hosts: ben-kafka-server
+  roles:
+    - kafka-server

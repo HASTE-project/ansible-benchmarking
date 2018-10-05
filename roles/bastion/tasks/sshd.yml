@@ -1,0 +1,12 @@
+
+
+- name: "Permit Tunneling via Bastion"
+  become: yes
+  # 'regexp' is pattern to match to line to replace, 'line' is what the line should look like
+  # backref=yes means the line is added even if regexp doesn't match, see:
+  # https://stackoverflow.com/questions/19390600/ansible-lineinfile-duplicates-line
+  lineinfile: dest=/etc/ssh/sshd_config regexp='^PermitTunnel' line="PermitTunnel yes" state=present backrefs=yes
+  register: permittunnel
+
+- service: name=ssh state=restarted enabled=yes
+  when: permittunnel.changed
