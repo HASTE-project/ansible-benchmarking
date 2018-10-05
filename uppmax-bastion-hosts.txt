@@ -1,4 +1,4 @@
-# For bootstrapping, /etc/hosts for the bastion:
+# For bootstrapping ansible, /etc/hosts for the bastion:
 
 
 192.168.1.40 ben-kafka-server
