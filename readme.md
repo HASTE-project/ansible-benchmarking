@@ -1,4 +1,7 @@
-Ansible Playbooks for Automated Deployment of the HASTE Pipeline
+Ansible Playbooks for Automated Deployment of servers for benchmarking study
+
+see: 
+_Apache Spark Streaming and HarmonicIO: A Performance and Architecture Comparison_ [https://arxiv.org/abs/1807.07724]
 
 Tested with Ubuntu LTS 16.04
 
