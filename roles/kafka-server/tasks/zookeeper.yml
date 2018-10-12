@@ -29,6 +29,7 @@
     owner: root
     group: root
 
-- name: restart zookeeper
-  become: true
-  shell: /usr/local/zookeeper/bin/zkServer.sh restart
+# Zookeeper is restarted by the benchmarking tool
+#- name: restart zookeeper
+#  become: true
+#  shell: /usr/local/zookeeper/bin/zkServer.sh restart
