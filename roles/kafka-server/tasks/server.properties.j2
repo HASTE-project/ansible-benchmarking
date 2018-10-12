@@ -62,6 +62,9 @@ message.max.bytes=200000000
 
 log.cleanup.policy=delete
 
+# Increasing number of partitions works around issue with lack of heap space.
+num.partitions=8
+
 
 ############################# Log Basics #############################
 
