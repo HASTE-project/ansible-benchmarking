@@ -1,0 +1,5 @@
+
+- name: install OpenJDK 8
+  become: true
+  package:
+    name: openjdk-8-jdk

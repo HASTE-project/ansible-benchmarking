@@ -55,9 +55,9 @@ socket.request.max.bytes=104857600
 
 
 # Big messages ########################################################################################################################
+replica.fetch.max.bytes=200000000
 max.message.bytes=200000000
 message.max.bytes=200000000
-replica.fetch.max.bytes=200000000
 # https://stackoverflow.com/questions/21020347/how-can-i-send-large-messages-with-kafka-over-15mb
 
 log.cleanup.policy=delete
