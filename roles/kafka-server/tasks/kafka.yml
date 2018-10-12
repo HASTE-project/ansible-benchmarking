@@ -16,6 +16,24 @@
     dest: /usr/local/kafka
     state: link
 
-- name: Start kafka
+# This dir is for the human-readable logs.
+# There is a separate 'log' dir for the actual message data, set in server.properties
+# (weirdly, lots of these logs seem to be out of data anyway)
+- name: Kafka 'logs' dir
   become: true
-  shell: /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
+  file:
+    path: /usr/local/kafka/logs
+    owner: ubuntu
+    state: directory
+
+- name: kafka config
+  become: true
+  template:
+    src: server.properties.j2
+    dest: /usr/local/kafka/config/server.properties
+
+# (We control kafka from the benchmarking tool itself.)
+#- name: Start kafka
+#  become: true
+#  shell: /usr/local/kafka/bin/kafka-server-start.sh /usr/local/kafka/config/server.properties
+

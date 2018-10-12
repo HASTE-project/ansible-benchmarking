@@ -8,7 +8,23 @@
   roles:
     - haste-common
 
-- import_playbook: spark.yml
+- hosts: ben-stream-src
+  roles:
+    - streaming-src
+
+- name: spark master
+  hosts: spark-master
+  roles:
+    - spark
+#    - pyspark-notebook-server
+
+
+- name: spark worker
+  hosts: spark-nodes
+  roles:
+    - spark
+
+
 
 - hosts: ben-kafka-server
   roles:

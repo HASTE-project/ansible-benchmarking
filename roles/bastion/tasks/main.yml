@@ -1,2 +1,11 @@
 
 - import_tasks: sshd.yml
+
+
+- name: install fail2ban
+  become: true
+  package:
+    name: fail2ban
+
+
+# TODO: config fail2ban for sshd.

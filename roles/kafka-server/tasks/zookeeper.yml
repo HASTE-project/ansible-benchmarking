@@ -29,6 +29,6 @@
     owner: root
     group: root
 
-- name: start zookeeper
+- name: restart zookeeper
   become: true
   shell: /usr/local/zookeeper/bin/zkServer.sh restart

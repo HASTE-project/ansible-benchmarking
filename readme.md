@@ -21,11 +21,13 @@ To deploy entire pipeline (dry run):
 
 ```
 ansible-playbook -i hosts_hpc2n site.yml --check
+ansible-playbook -i hosts_uppmax site.yml --check
 ```
 
 To deploy for real:
 ```
 ansible-playbook -i hosts_hpc2n site.yml
+ansible-playbook -i hosts_uppmax site.yml
 ```
 
 To restart the Spark master and slaves:
