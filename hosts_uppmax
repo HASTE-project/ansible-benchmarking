@@ -2,26 +2,15 @@
 
 # Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more setup info.
 
-ben-stream-src
-ben-spark-master
-#ben-spark-worker-5
-ben-spark-worker-4
-ben-spark-worker-3
-ben-spark-worker-2
-ben-spark-worker-1
-ben-bastion
-ben-kafka-server
+ben-uppmax-haste-spark-master
+ben-uppmax-haste-spark-worker-1
 
 [all:vars]
 # Needed for Ubuntu hosts
 ansible_python_interpreter=/usr/bin/python3
 
 [spark-master]
-ben-spark-master
+ben-uppmax-haste-spark-master
 
 [spark-nodes]
-ben-spark-worker-1
-ben-spark-worker-2
-ben-spark-worker-3
-ben-spark-worker-4
-#ben-spark-worker-5
+ben-uppmax-haste-spark-worker-1

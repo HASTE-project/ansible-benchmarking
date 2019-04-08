@@ -1,4 +1,7 @@
 
+# Hack for missing packages:
+# sudo sed -ie 's/nova.clouds.archive.ubuntu.com/se.archive.ubuntu.com/' /etc/apt/sources.list ; sudo apt update
+
 - name: install OpenJDK 8
   become: true
   package:

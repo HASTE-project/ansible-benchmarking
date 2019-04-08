@@ -21,12 +21,12 @@
 
 - name: create jupyter notebook dir
   file:
-    path: "~/jupyter"
+    path: "~/jupyters"
     state: directory
 
 - name: create jupyter config dir
   file:
-    path: "~/.jupyter"
+    path: "~/.jupyters"
     state: directory
 
 # TODO: This should be git-crypted - at the moment the server only listens on localhost

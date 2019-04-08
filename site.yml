@@ -16,13 +16,15 @@
   hosts: spark-master
   roles:
     - spark
-#    - pyspark-notebook-server
+    - spark-master
+    - pyspark-notebook-server
 
 
 - name: spark worker
   hosts: spark-nodes
   roles:
     - spark
+    - spark-worker
 
 
 
