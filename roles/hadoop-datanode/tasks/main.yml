@@ -1,0 +1,10 @@
+- name: "Stop datanode"
+  command: ./sbin/hadoop-daemon.sh stop datanode
+  args:
+    chdir: /usr/local/hadoop
+
+- name: "Start datanode"
+  command: ./sbin/hadoop-daemon.sh start datanode
+  args:
+    chdir: /usr/local/hadoop
+

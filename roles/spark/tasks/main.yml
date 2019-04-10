@@ -11,6 +11,7 @@
   copy:
     content: |
             SPARK_MASTER_HOST="{{ hostvars[item]['ansible_hostname'] }}"
+            HADOOP_CONF_DIR="/usr/local/hadoop/conf"
     dest: /usr/local/spark/conf/spark-env.sh
   become: yes
   with_items:

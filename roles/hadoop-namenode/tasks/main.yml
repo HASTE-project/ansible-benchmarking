@@ -1,0 +1,10 @@
+- name: "Stop Namenode"
+  command: ./sbin/hadoop-daemon.sh stop namenode
+  args:
+    chdir: /usr/local/hadoop
+
+- name: "Start Namenode"
+  command: ./sbin/hadoop-daemon.sh start namenode
+  args:
+    chdir: /usr/local/hadoop
+

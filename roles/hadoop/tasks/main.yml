@@ -1,0 +1,93 @@
+# TODO: extract variable for Spark file name.
+
+- name: Download and Unzip Hadoop
+  become: true
+  unarchive:
+    # For Hadoop 2.7
+    src: http://apache.mirrors.spacedump.net/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+    dest: /usr/local/
+    # Don't download it again
+    creates: /usr/local/hadoop-2.7.7
+    remote_src: yes
+
+- name: Symlink to Hadoop
+  become: true
+  file:
+    src: /usr/local/hadoop-2.7.7
+    dest: /usr/local/hadoop
+    state: link
+
+
+#- name: "Hadoop node data dir"
+#  become: true
+#  file:
+#    path: /home/ubuntu/data/nameNode
+#    state: directory
+#
+#- name: "Hadoop data dir"
+#  become: true
+#  file:
+#    path: /home/ubuntu/data/dataNode
+#    state: directory
+
+- name: "Hadoop core-site.xml"
+  become: true
+  copy:
+    dest: "/usr/local/hadoop/etc/hadoop/core-site.xml"
+    content: |
+      <configuration>
+          <property>
+            <name>fs.defaultFS</name>
+            <value>hdfs://192.168.1.19:9000</value>
+        </property>
+      </configuration>
+
+- name: "Hadoop hdfs-site.xml"
+  become: true
+  copy:
+    dest: "/usr/local/hadoop/etc/hadoop/hdfs-site.xml"
+    content: |
+      <configuration>
+
+      <property>
+      <name>dfs.namenode.name.dir</name>
+      <value>/home/ubuntu/data/nameNode</value>
+      </property>
+
+      <property>
+      <name>dfs.datanode.data.dir</name>
+      <value>/home/ubuntu/data/dataNode</value>
+      </property>
+
+      <!-- Otherwise we get Datanode denied communication with namenode because hostname cannot be resolved
+      <property>
+        <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+        <value>false</value>
+      </property>
+               -->
+
+      <property>
+      <name>dfs.permissions.enabled</name>
+      <value>false</value>
+      </property>
+
+      <property>
+      <name>dfs.replication</name>
+      <value>1</value>
+      </property>
+
+
+
+      <property>
+        <name>dfs.namenode.rpc-bind-host</name>
+        <value>0.0.0.0</value>
+        <description>
+          The actual address the RPC server will bind to. If this optional address is
+          set, it overrides only the hostname portion of dfs.namenode.rpc-address.
+          It can also be specified per name node or name service for HA/Federation.
+          This is useful for making the name node listen on all interfaces by
+          setting it to 0.0.0.0.
+        </description>
+      </property>
+
+      </configuration>

@@ -6,3 +6,13 @@
   become: true
   package:
     name: openjdk-8-jdk
+
+
+# https://stackoverflow.com/questions/27733511/how-to-set-linux-environment-variables-with-ansible
+
+- name: populate /etc/environment
+  become: true
+  lineinfile:
+    dest: "/etc/environment"
+    state: present
+    line: "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre"

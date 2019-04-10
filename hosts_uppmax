@@ -2,8 +2,11 @@
 
 # Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more setup info.
 
+
 ben-uppmax-haste-spark-master
 ben-uppmax-haste-spark-worker-1
+ben-uppmax-haste-spark-worker-2
+ben-uppmax-haste-spark-worker-3
 
 [all:vars]
 # Needed for Ubuntu hosts
@@ -14,3 +17,5 @@ ben-uppmax-haste-spark-master
 
 [spark-nodes]
 ben-uppmax-haste-spark-worker-1
+ben-uppmax-haste-spark-worker-2
+ben-uppmax-haste-spark-worker-3

@@ -18,6 +18,8 @@
     - spark
     - spark-master
     - pyspark-notebook-server
+    - hadoop
+    - hadoop-namenode
 
 
 - name: spark worker
@@ -25,6 +27,8 @@
   roles:
     - spark
     - spark-worker
+    - hadoop
+    - hadoop-datanode
 
 
 

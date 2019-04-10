@@ -3,6 +3,8 @@ Ansible Playbooks for Automated Deployment of servers for benchmarking study
 see: 
 _Apache Spark Streaming and HarmonicIO: A Performance and Architecture Comparison_ [https://arxiv.org/abs/1807.07724]
 
+Also used for Uppsala University LDSA Course 2019 --  [https://studentportalen.uu.se/portal/portal/uusp/student/student-courses?courseCode=1TD268]
+
 Tested with Ubuntu LTS 16.04
 
 Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more details.
