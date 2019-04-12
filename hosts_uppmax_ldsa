@@ -3,22 +3,17 @@
 # Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more setup info.
 
 
-benblamey-uppmax-ldsa-spark-master
-#130.238.29.35
-#130.238.29.175
-#130.238.29.153
-130.238.29.47
-130.238.29.238
 
 [spark-master]
-benblamey-uppmax-ldsa-spark-master
+#benblamey-uppmax-ldsa-spark-master
 
 [spark-nodes]
-#130.238.29.35
-#130.238.29.175
-#130.238.29.153
+130.238.29.35
+130.238.29.206
+130.238.29.153
+130.238.29.175
 130.238.29.47
-130.238.29.238
+
 
 [all:vars]
 # Needed for Ubuntu hosts

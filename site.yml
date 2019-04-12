@@ -12,24 +12,30 @@
   roles:
     - streaming-src
 
+# do spark first, it installs java:
+
 - name: spark master
   hosts: spark-master
   roles:
-    - hadoop
-    - hadoop-namenode
     - spark
     - spark-master
+    - hadoop
+    - hadoop-namenode
     - pyspark-notebook-server
 
 
 - name: spark worker
   hosts: spark-nodes
   roles:
-    - hadoop
-    - hadoop-datanode
     - spark
     - spark-worker
+    - hadoop
+    - hadoop-datanode
 
+
+- hosts: spark-client
+  roles:
+    - pyspark-notebook-server
 
 
 - hosts: ben-kafka-server

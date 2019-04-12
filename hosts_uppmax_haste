@@ -7,6 +7,7 @@ ben-uppmax-haste-spark-master
 ben-uppmax-haste-spark-worker-1
 ben-uppmax-haste-spark-worker-2
 ben-uppmax-haste-spark-worker-3
+ben-uppmax-haste-spark-client
 
 [all:vars]
 # Needed for Ubuntu hosts
@@ -19,3 +20,6 @@ ben-uppmax-haste-spark-master
 ben-uppmax-haste-spark-worker-1
 ben-uppmax-haste-spark-worker-2
 ben-uppmax-haste-spark-worker-3
+
+[spark-client]
+ben-uppmax-haste-spark-client

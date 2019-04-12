@@ -16,3 +16,6 @@
     dest: "/etc/environment"
     state: present
     line: "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre"
+
+- name: export JAVA_HOME immediately
+  shell: export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre

@@ -15,17 +15,22 @@
 #  hostname: name="{{inventory_hostname}}"
 
 
-- name: step 1
-  shell: touch hosts_done; for i in {1..255}; do echo "192.168.1.$i foo-192.168.1.$i-ldsa" | tee -a /etc/hosts; done
+- name: step 0
+  shell: touch hosts_done0; sed -i '/\[192\.168\]/d' /etc/hosts
   become: true
   args:
-    creates: hosts_done
+    creates: hosts_done0
     executable: /bin/bash
 
+- name: step 1
+  shell: touch hosts_done1; for i in {1..255}; do echo "192.168.1.$i host-192-168-1-$i-ldsa" | tee -a /etc/hosts; done
+  become: true
+  args:
+    creates: hosts_done1
+    executable: /bin/bash
 
 - name: step 3
-  shell: hostname foo.$(hostname -I | awk '{$1=$1};1').ldsa ; hostname
+  shell: sudo hostname host-$(hostname -I | awk '{$1=$1};1' | sed 's/\./-/'g)-ldsa ; hostname
   become: true
   args:
     executable: /bin/bash
-
