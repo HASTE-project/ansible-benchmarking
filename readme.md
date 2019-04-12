@@ -38,6 +38,9 @@ To restart the Spark master and slaves:
 GOTCHA: check the Spark master host name - its hard coded!!!
 
 
+ansible -i hosts_uppmax_ldsa all -a "echo hi"
+
+
 ```
 ansible-playbook -i hosts_ben_uppmax playbooks-util/restart-spark-cluster.yml
 ```

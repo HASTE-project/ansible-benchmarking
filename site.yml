@@ -15,20 +15,20 @@
 - name: spark master
   hosts: spark-master
   roles:
+    - hadoop
+    - hadoop-namenode
     - spark
     - spark-master
     - pyspark-notebook-server
-    - hadoop
-    - hadoop-namenode
 
 
 - name: spark worker
   hosts: spark-nodes
   roles:
-    - spark
-    - spark-worker
     - hadoop
     - hadoop-datanode
+    - spark
+    - spark-worker
 
 
 

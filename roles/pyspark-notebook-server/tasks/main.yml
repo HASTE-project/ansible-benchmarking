@@ -14,19 +14,24 @@
     executable: pip3
     name: pyspark
 
-# TODO: add regex to match any old line
-- name: "PYSPARK_PYTHON env variable"
-  become: yes
-  lineinfile: dest=/etc/environment line="PYSPARK_PYTHON=python3" state=present
+- pip:
+    executable: pip3
+    name: pandas
+
+- pip:
+    executable: pip3
+    name: matplotlib
+
+
 
 - name: create jupyter notebook dir
   file:
-    path: "~/jupyters"
+    path: "~/jupyter"
     state: directory
 
 - name: create jupyter config dir
   file:
-    path: "~/.jupyters"
+    path: "~/.jupyter"
     state: directory
 
 # TODO: This should be git-crypted - at the moment the server only listens on localhost

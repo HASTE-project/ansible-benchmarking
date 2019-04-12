@@ -18,17 +18,15 @@
     state: link
 
 
-#- name: "Hadoop node data dir"
-#  become: true
-#  file:
-#    path: /home/ubuntu/data/nameNode
-#    state: directory
-#
-#- name: "Hadoop data dir"
-#  become: true
-#  file:
-#    path: /home/ubuntu/data/dataNode
-#    state: directory
+- name: "Hadoop node data dir"
+  file:
+    path: /home/ubuntu/data/nameNode
+    state: directory
+
+- name: "Hadoop data dir"
+  file:
+    path: /home/ubuntu/data/dataNode
+    state: directory
 
 - name: "Hadoop core-site.xml"
   become: true
@@ -38,7 +36,7 @@
       <configuration>
           <property>
             <name>fs.defaultFS</name>
-            <value>hdfs://192.168.1.19:9000</value>
+            <value>hdfs://192.168.1.153:9000</value>
         </property>
       </configuration>
 

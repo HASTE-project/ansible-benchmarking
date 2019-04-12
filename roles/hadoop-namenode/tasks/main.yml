@@ -3,8 +3,12 @@
   args:
     chdir: /usr/local/hadoop
 
+# issue here with non-zero exit code?!
 - name: "Start Namenode"
   command: ./sbin/hadoop-daemon.sh start namenode
+  register: verification
+  changed_when: verification.rc == 1
+  ignore_errors: yes
   args:
     chdir: /usr/local/hadoop
 
