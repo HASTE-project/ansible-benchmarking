@@ -4,16 +4,16 @@
   become: true
   unarchive:
     # For Hadoop 2.7
-    src: http://apache.mirrors.spacedump.net/spark/spark-2.4.1/spark-2.4.1-bin-hadoop2.7.tgz
+    src: http://apache.mirrors.spacedump.net/spark/spark-2.4.2/spark-2.4.2-bin-hadoop2.7.tgz
     dest: /usr/local/
     # Don't download it again
-    creates: /usr/local/spark-2.4.1-bin-hadoop2.7
+    creates: /usr/local/spark-2.4.2-bin-hadoop2.7
     remote_src: yes
 
 - name: Symlink to Spark
   become: true
   file:
-    src: /usr/local/spark-2.4.1-bin-hadoop2.7
+    src: /usr/local/spark-2.4.2-bin-hadoop2.7
     dest: /usr/local/spark
     force: true
     state: link

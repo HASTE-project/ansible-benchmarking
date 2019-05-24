@@ -7,7 +7,7 @@
 # See: https://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts
 # Template: https://github.com/apache/spark/blob/master/conf/spark-env.sh.template
 
-- name: Config file
+- name: "Config file"
   copy:
     content: |
             SPARK_MASTER_HOST="{{ hostvars[item]['ansible_hostname'] }}"
@@ -19,6 +19,18 @@
   with_items:
     - "{{ groups['spark-master'] }}"
 
+
+- name: install python3-pip
+  package:
+    name: python3-pip
+    state: present
+
+
+# for the million songs
+- name: "install h5py"
+  pip:
+    executable: pip3
+    name: h5py
 
 
 # TODO: add regex to match any old line

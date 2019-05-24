@@ -5,16 +5,33 @@
 
 
 [spark-master]
-#benblamey-uppmax-ldsa-spark-master
+benblamey-uppmax-ldsa-spark-master
 
 [spark-nodes]
-130.238.29.35
-130.238.29.206
-130.238.29.153
+# dead 130.238.29.35
+# dead 130.238.29.206
+# dead 130.238.29.153
+
+# (none)
+# 130.238.29.47 -- deleted this on to make space.
+
+# B
 130.238.29.175
-130.238.29.47
+130.238.29.178
+130.238.29.215
+130.238.29.78
+
+
+# C
+130.238.29.142
+130.238.29.132
+130.238.29.168
+
+# D
+130.238.29.172
 
 
 [all:vars]
 # Needed for Ubuntu hosts
 ansible_python_interpreter=/usr/bin/python3
+

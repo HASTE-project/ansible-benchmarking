@@ -40,6 +40,9 @@
         </property>
       </configuration>
 
+# LDSA: <value>hdfs://192.168.1.153:9000</value>
+# HASTE: <value>hdfs://192.168.1.19:9000</value>
+
 - name: "Hadoop hdfs-site.xml"
   become: true
   copy:
@@ -71,7 +74,7 @@
 
       <property>
       <name>dfs.replication</name>
-      <value>1</value>
+      <value>2</value>
       </property>
 
 

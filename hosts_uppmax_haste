@@ -8,6 +8,7 @@ ben-uppmax-haste-spark-worker-1
 ben-uppmax-haste-spark-worker-2
 ben-uppmax-haste-spark-worker-3
 ben-uppmax-haste-spark-client
+stream-src-1
 
 [all:vars]
 # Needed for Ubuntu hosts

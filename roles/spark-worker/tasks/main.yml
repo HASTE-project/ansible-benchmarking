@@ -27,6 +27,8 @@
 
 
 
+# LDSA: spark_master_host: "spark://192.168.1.153:7077"
+# HASTE: spark_master_host: "spark://192.168.1.19:7077"
 
 # TODO: get hostname from a variable
 - name: "Start slave"

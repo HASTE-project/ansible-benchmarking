@@ -29,7 +29,7 @@ ansible-playbook -i hosts_uppmax site.yml --check
 To deploy for real:
 ```
 ansible-playbook -i hosts_hpc2n site.yml
-ansible-playbook -i hosts_uppmax site.yml
+ansible-playbook -i hosts_uppmax_ldsa site.yml
 ```
 
 To restart the Spark master and slaves:
