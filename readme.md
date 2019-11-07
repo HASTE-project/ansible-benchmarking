@@ -15,7 +15,7 @@ For UPPMAX use -i hosts_uppmax
 **Note that many hosts do not have public IPs, you will need to configure SSH forwarding via one of the servers with a public IP**
 
 ```
-ansible -i hosts_uppmax all -a "echo hi"
+ansible -i hosts_uppmax_ldsa all -a "echo hi"
 ansible -i hosts_hpc2n all -a "echo hi"
 ```
 
@@ -39,6 +39,8 @@ GOTCHA: check the Spark master host name - its hard coded!!!
 
 
 ansible -i hosts_uppmax_ldsa all -a "echo hi"
+ansible -i hosts_uppmax_ldsa all -a "python3 --version"
+ansible -i hosts_uppmax_ldsa all -a "sudo apt update"
 
 
 ```
