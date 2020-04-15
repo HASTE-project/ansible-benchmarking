@@ -57,11 +57,11 @@
     name: tables
 
 
-- name: "install pysam"
-  become: true
-  pip:
-    executable: pip3
-    name: pysam
+#- name: "install pysam"
+#  become: true
+#  pip:
+#    executable: pip3
+#    name: pysam
 
 
 

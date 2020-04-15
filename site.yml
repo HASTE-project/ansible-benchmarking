@@ -1,16 +1,16 @@
 #- import_playbook: harmonicio.yml
 
-- hosts: ben-bastion
-  roles:
-    - bastion
+#- hosts: ben-bastion
+#  roles:
+#    - bastion
 
 - hosts: all
   roles:
     - haste-common
 
-- hosts: ben-stream-src
-  roles:
-    - streaming-src
+#- hosts: ben-stream-src
+#  roles:
+#    - streaming-src
 
 # do spark first, it installs java:
 
@@ -21,7 +21,7 @@
     - spark-master
     - hadoop
     - hadoop-namenode
-    - pyspark-notebook-server
+#    - pyspark-notebook-server
 
 
 - name: spark worker
@@ -33,11 +33,11 @@
     - hadoop-datanode
 
 
-- hosts: spark-client
-  roles:
-    - pyspark-notebook-server
-
-
-- hosts: ben-kafka-server
-  roles:
-    - kafka-server
+#- hosts: spark-client
+#  roles:
+#    - pyspark-notebook-server
+#
+#
+#- hosts: ben-kafka-server
+#  roles:
+#    - kafka-server

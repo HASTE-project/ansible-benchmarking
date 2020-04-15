@@ -33,7 +33,7 @@
 # TODO: get hostname from a variable
 - name: "Start slave"
   vars:
-    spark_master_host: "spark://192.168.1.10:7077"
+    spark_master_host: "spark://192.168.2.87:7077"
   command: "./sbin/start-slave.sh {{spark_master_host}}"
   args:
           chdir: /usr/local/spark/

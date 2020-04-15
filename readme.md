@@ -17,6 +17,7 @@ For UPPMAX use -i hosts_uppmax
 ```
 ansible -i hosts_uppmax_ldsa all -a "echo hi"
 ansible -i hosts_hpc2n all -a "echo hi"
+ansible -i hosts_snic_east1 all -a "echo hi"
 ```
 
 To deploy entire pipeline (dry run):
@@ -30,6 +31,7 @@ To deploy for real:
 ```
 ansible-playbook -i hosts_hpc2n site.yml
 ansible-playbook -i hosts_uppmax_ldsa site.yml
+ansible-playbook -i hosts_snic_east1 site.yml
 ```
 
 To restart the Spark master and slaves:
