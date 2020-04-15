@@ -67,6 +67,8 @@
 
 
 # TODO: add regex to match any old line
+# REQUIRES REBOOT!
 - name: "PYSPARK_PYTHON env variable"
   become: yes
   lineinfile: dest=/etc/environment line="PYSPARK_PYTHON=/usr/bin/python3" state=present
+

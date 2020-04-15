@@ -29,6 +29,14 @@
     creates: hosts_done1
     executable: /bin/bash
 
+- name: step 2
+  shell: touch hosts_done2; for i in {1..255}; do echo "192.168.2.$i host-192-168-2-$i-ldsa" | tee -a /etc/hosts; done
+  become: true
+  args:
+    creates: hosts_done2
+    executable: /bin/bash
+
+
 - name: step 3
   shell: sudo hostname host-$(hostname -I | awk '{$1=$1};1' | sed 's/\./-/'g)-ldsa ; hostname
   become: true
