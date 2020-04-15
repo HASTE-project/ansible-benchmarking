@@ -5,7 +5,7 @@ _Apache Spark Streaming and HarmonicIO: A Performance and Architecture Compariso
 
 Also used for Uppsala University LDSA Course 2019 --  [https://studentportalen.uu.se/portal/portal/uusp/student/student-courses?courseCode=1TD268]
 
-Tested with Ubuntu LTS 16.04
+Tested with Ubuntu LTS 18.04
 
 Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more details.
 
