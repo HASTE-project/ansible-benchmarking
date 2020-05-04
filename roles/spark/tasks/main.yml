@@ -67,7 +67,7 @@
 
 
 # TODO: add regex to match any old line
-# REQUIRES REBOOT!
+# REQUIRES REBOOT! set it on the driver...
 - name: "PYSPARK_PYTHON env variable"
   become: yes
   lineinfile: dest=/etc/environment line="PYSPARK_PYTHON=/usr/bin/python3" state=present

@@ -1,21 +1,43 @@
 
-ben-spark-master-ldsa-2020
-ben-blamey-spark-cluster-1
-ben-blamey-spark-cluster-2
-ben-blamey-spark-cluster-3
-ben-blamey-spark-cluster-4
-ben-blamey-spark-cluster-5
+#ben-spark-master-ldsa-2020
+#ben-blamey-spark-cluster-1
+#ben-blamey-spark-cluster-2
+#ben-blamey-spark-cluster-3
+#ben-blamey-spark-cluster-4
+#ben-blamey-spark-cluster-5
+
+ben-blamey-spark-cluster-1--1
+ben-blamey-spark-cluster-1--2
+ben-blamey-spark-cluster-1--3
+ben-blamey-spark-cluster-1--4
+ben-blamey-spark-cluster-1--5
+ben-blamey-spark-cluster-1--6
+ben-blamey-spark-cluster-1--7
+ben-blamey-spark-cluster-1--8
+ben-blamey-spark-cluster-1--9
+ben-blamey-spark-cluster-1--10
 
 [all:vars]
 # Needed for Ubuntu hosts
 ansible_python_interpreter=/usr/bin/python3
 
 [spark-master]
-ben-spark-master-ldsa-2020
+#ben-spark-master-ldsa-2020
 
 [spark-nodes]
-ben-blamey-spark-cluster-1
-ben-blamey-spark-cluster-2
-ben-blamey-spark-cluster-3
-ben-blamey-spark-cluster-4
-ben-blamey-spark-cluster-5
+#ben-blamey-spark-cluster-1
+#ben-blamey-spark-cluster-2
+#ben-blamey-spark-cluster-3
+#ben-blamey-spark-cluster-4
+#ben-blamey-spark-cluster-5
+
+ben-blamey-spark-cluster-1--1
+ben-blamey-spark-cluster-1--2
+ben-blamey-spark-cluster-1--3
+ben-blamey-spark-cluster-1--4
+ben-blamey-spark-cluster-1--5
+ben-blamey-spark-cluster-1--6
+ben-blamey-spark-cluster-1--7
+ben-blamey-spark-cluster-1--8
+ben-blamey-spark-cluster-1--9
+ben-blamey-spark-cluster-1--10
