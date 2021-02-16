@@ -1,0 +1,16 @@
+benblamey-spark-master-2021
+benblamey-spark-worker-2021-1
+benblamey-spark-worker-2021-2
+benblamey-spark-worker-2021-3
+
+[all:vars]
+# Needed for Ubuntu hosts
+ansible_python_interpreter=/usr/bin/python3
+
+[spark-master]
+benblamey-spark-master-2021
+
+[spark-nodes]
+benblamey-spark-worker-2021-1
+benblamey-spark-worker-2021-2
+benblamey-spark-worker-2021-3

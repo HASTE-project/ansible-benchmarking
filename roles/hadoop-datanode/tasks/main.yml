@@ -1,13 +1,16 @@
-- name: "Stop datanode"
-  command: ./sbin/hadoop-daemon.sh stop datanode
-  args:
-    chdir: /usr/local/hadoop
+#- name: "Stop datanode"
+#  command: ./hdfs --daemon stop datanode
+#  args:
+#    chdir: /usr/local/hadoop/bin
 
 # issue here with non-zero exit code?!
 - name: "Start datanode"
-  command: ./sbin/hadoop-daemon.sh start datanode
-  register: verification
-  changed_when: verification.rc == 1
+  command: ./hdfs --daemon start datanode
+#  register: verification
+#  changed_when: verification.rc == 1
   ignore_errors: yes
   args:
-    chdir: /usr/local/hadoop
+    chdir: /usr/local/hadoop/bin
+
+
+#/usr/local/hadoop/bin/hdfs --daemon start datanode

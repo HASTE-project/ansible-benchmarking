@@ -1,14 +1,21 @@
-- name: "Stop Namenode"
-  command: ./sbin/hadoop-daemon.sh stop namenode
-  args:
-    chdir: /usr/local/hadoop
+#- name: "Stop Namenode"
+#  command: ./hdfs --daemon stop namenode
+#  args:
+#    chdir: /usr/local/hadoop/bin
+
+ #Namenode needsto bformsttedwith ./hdfs namenode -format
+
+# THIS IS BROKEN?!
 
 # issue here with non-zero exit code?!
 - name: "Start Namenode"
-  command: ./sbin/hadoop-daemon.sh start namenode
-  register: verification
-  changed_when: verification.rc == 1
+  command: ./hdfs --daemon start namenode
+#  register: verification
+#  changed_when: verification.rc == 1
   ignore_errors: yes
   args:
-    chdir: /usr/local/hadoop
+    chdir: /usr/local/hadoop/bin
+
+
+#/usr/local/hadoop/bin/hdfs --daemon start namenode
 

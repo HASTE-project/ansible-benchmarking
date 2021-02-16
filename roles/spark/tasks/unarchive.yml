@@ -3,17 +3,16 @@
 - name: Download and Unzip Apache Spark
   become: true
   unarchive:
-    # For Hadoop 2.7
-    src: https://archive.apache.org/dist/spark/spark-2.4.5/spark-2.4.5-bin-hadoop2.7.tgz
+    src: https://archive.apache.org/dist/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz
     dest: /usr/local/
     # Don't download it again
-    creates: /usr/local/spark-2.4.5-bin-hadoop2.7
+    creates: /usr/local/spark-3.0.1-bin-hadoop3.2
     remote_src: yes
 
 - name: Symlink to Spark
   become: true
   file:
-    src: /usr/local/spark-2.4.5-bin-hadoop2.7
+    src: /usr/local/spark-3.0.1-bin-hadoop3.2
     dest: /usr/local/spark
     force: true
     state: link

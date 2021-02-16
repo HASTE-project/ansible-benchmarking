@@ -3,17 +3,16 @@
 - name: Download and Unzip Hadoop
   become: true
   unarchive:
-    # For Hadoop 2.7
-    src: http://apache.mirrors.spacedump.net/hadoop/common/hadoop-2.7.7/hadoop-2.7.7.tar.gz
+    src: https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
     dest: /usr/local/
     # Don't download it again
-    creates: /usr/local/hadoop-2.7.7
+    creates: /usr/local/hadoop-3.2.2
     remote_src: yes
 
 - name: Symlink to Hadoop
   become: true
   file:
-    src: /usr/local/hadoop-2.7.7
+    src: /usr/local/hadoop-3.2.2
     dest: /usr/local/hadoop
     state: link
 
@@ -36,7 +35,7 @@
       <configuration>
           <property>
             <name>fs.defaultFS</name>
-            <value>hdfs://192.168.2.87:9000</value>
+            <value>hdfs://192.168.2.113:9000</value>
         </property>
       </configuration>
 
@@ -65,7 +64,7 @@
         <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
         <value>false</value>
       </property>
-               -->
+      -->
 
       <property>
       <name>dfs.permissions.enabled</name>
@@ -76,8 +75,6 @@
       <name>dfs.replication</name>
       <value>2</value>
       </property>
-
-
 
       <property>
         <name>dfs.namenode.rpc-bind-host</name>

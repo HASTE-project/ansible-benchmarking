@@ -19,17 +19,39 @@
 # See: https://spark.apache.org/docs/latest/spark-standalone.html#cluster-launch-scripts
 # Template: https://github.com/apache/spark/blob/master/conf/spark-env.sh.template
 
-- name: "Config file"
+- name: "Spark-env Config file"
   copy:
     content: |
             SPARK_MASTER_HOST="{{ hostvars[item]['ansible_hostname'] }}"
             HADOOP_CONF_DIR="/usr/local/hadoop/conf"
             PYSPARK_PYTHON=/usr/bin/python3
             PYSPARK_DRIVER_PYTHON=/usr/bin/python3
+            SPARK_WORKER_PORT=9997
     dest: /usr/local/spark/conf/spark-env.sh
   become: yes
   with_items:
     - "{{ groups['spark-master'] }}"
+
+
+
+# Example:
+# spark.master                     spark://master:7077
+# spark.eventLog.enabled           true
+# spark.eventLog.dir               hdfs://namenode:8021/directory
+# spark.serializer                 org.apache.spark.serializer.KryoSerializer
+# spark.driver.memory              5g
+# spark.executor.extraJavaOptions  -XX:+PrintGCDetails -Dkey=value -Dnumbers="one two three"
+
+- name: "Spark-defaults Config file"
+  copy:
+    content: |
+      spark.blockManager.port=9999
+      spark.shuffle.service.enabled=True
+    dest: /usr/local/spark/conf/spark-defaults.conf
+  become: yes
+  with_items:
+    - "{{ groups['spark-master'] }}"
+
 
 # complaints about a missing package here -- run
 # sudo sed -ie 's/nova.clouds.archive.ubuntu.com/se.archive.ubuntu.com/' /etc/apt/sources.list
@@ -38,6 +60,13 @@
   become: true
   package:
     name: python3-pip
+    state: present
+
+
+- name: install netstat
+  become: true
+  package:
+    name: net-tools
     state: present
 
 

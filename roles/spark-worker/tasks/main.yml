@@ -1,9 +1,9 @@
 
-- name: "Stop shuffle service"
-  command: ./sbin/stop-shuffle-service.sh
-  args:
-    chdir: /usr/local/spark/
-  become: yes
+#- name: "Stop shuffle service"
+#  command: ./sbin/stop-shuffle-service.sh
+#  args:
+#    chdir: /usr/local/spark/
+#  become: yes
 
 - name: "Stop slave"
   command: ./sbin/stop-slave.sh
@@ -27,21 +27,21 @@
 
 
 
-# LDSA: spark_master_host: "spark://192.168.1.153:7077"
-# HASTE: spark_master_host: "spark://192.168.1.19:7077"
 
 # TODO: get hostname from a variable
 - name: "Start slave"
   vars:
-    spark_master_host: "spark://192.168.2.87:7077"
+    spark_master_host: "spark://192.168.2.113:7077"
   command: "./sbin/start-slave.sh {{spark_master_host}}"
   args:
           chdir: /usr/local/spark/
   become: yes # needed to write log files?
 
 
-- name: "Start shuffle service"
-  command: "./sbin/start-shuffle-service.sh"
-  args:
-    chdir: /usr/local/spark/
-  become: yes # needed to write log files?
+# This is no longer an external service for standalone in Spark 3.x
+# See config file setting instead
+#- name: "Start shuffle service"
+#  command: "./sbin/start-shuffle-service.sh"
+#  args:
+#    chdir: /usr/local/spark/
+#  become: yes # needed to write log files?
