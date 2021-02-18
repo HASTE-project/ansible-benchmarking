@@ -2,6 +2,7 @@ benblamey-spark-master-2021
 benblamey-spark-worker-2021-1
 benblamey-spark-worker-2021-2
 benblamey-spark-worker-2021-3
+benblamey-spark-worker-2021-4
 
 [all:vars]
 # Needed for Ubuntu hosts
@@ -14,3 +15,4 @@ benblamey-spark-master-2021
 benblamey-spark-worker-2021-1
 benblamey-spark-worker-2021-2
 benblamey-spark-worker-2021-3
+benblamey-spark-worker-2021-4

@@ -12,8 +12,6 @@
   become: yes # needed to write log files?
 
 
-
-
 #  Options:
 #    -c CORES, --cores CORES  Number of cores to use
 #    -m MEM, --memory MEM     Amount of memory to use (e.g. 1000M, 2G)
@@ -24,9 +22,6 @@
 #    --webui-port PORT        Port for web UI (default: 8081)
 #    --properties-file FILE   Path to a custom Spark properties file.
 #                             Default is conf/spark-defaults.conf.
-
-
-
 
 # TODO: get hostname from a variable
 - name: "Start slave"

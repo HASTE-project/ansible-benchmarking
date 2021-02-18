@@ -15,10 +15,10 @@ GOTCHAS (2021 branch):
 - some issue with the JDK environment variable missing? need a fresh shell session? (just run it more than once)
 - TODO: add cron lines to restart hdfs/spark on reboot.
 
-Tested with Ubuntu LTS 18.04
 
 Ensure that SSH configuration and IP addresses are configured (in `~/.ssh/config` and `/etc/hosts`) first. See 'hostnames.yml' for more details.
 
+For 2019 work,
 For HPC2N use -i hosts_hpc2n
 For UPPMAX use -i hosts_uppmax
 

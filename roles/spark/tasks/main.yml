@@ -49,9 +49,9 @@
       spark.shuffle.service.enabled=True
     dest: /usr/local/spark/conf/spark-defaults.conf
   become: yes
-  with_items:
-    - "{{ groups['spark-master'] }}"
-
+#  with_items:
+#    - "{{ groups['spark-master'] }}"
+# .... this is a bit of a gotcha... this task gets skipped if there are no hosts in the 'spark-master' group!
 
 # complaints about a missing package here -- run
 # sudo sed -ie 's/nova.clouds.archive.ubuntu.com/se.archive.ubuntu.com/' /etc/apt/sources.list
