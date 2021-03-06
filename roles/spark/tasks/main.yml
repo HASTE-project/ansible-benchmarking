@@ -47,6 +47,8 @@
     content: |
       spark.blockManager.port=9999
       spark.shuffle.service.enabled=True
+      spark.worker.cleanup.enabled=True
+      spark.worker.cleanup.appDataTtl=86400
     dest: /usr/local/spark/conf/spark-defaults.conf
   become: yes
 #  with_items:
