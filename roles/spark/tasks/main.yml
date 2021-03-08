@@ -27,6 +27,7 @@
             PYSPARK_PYTHON=/usr/bin/python3
             PYSPARK_DRIVER_PYTHON=/usr/bin/python3
             SPARK_WORKER_PORT=9997
+            SPARK_WORKER_OPTS="-Dspark.worker.cleanup.enabled=true -Dspark.worker.cleanup.appDataTtl=3600"
     dest: /usr/local/spark/conf/spark-env.sh
   become: yes
   with_items:
@@ -42,13 +43,14 @@
 # spark.driver.memory              5g
 # spark.executor.extraJavaOptions  -XX:+PrintGCDetails -Dkey=value -Dnumbers="one two three"
 
+
+
+
 - name: "Spark-defaults Config file"
   copy:
     content: |
       spark.blockManager.port=9999
       spark.shuffle.service.enabled=True
-      spark.worker.cleanup.enabled=True
-      spark.worker.cleanup.appDataTtl=86400
     dest: /usr/local/spark/conf/spark-defaults.conf
   become: yes
 #  with_items:
